@@ -1,0 +1,40 @@
+misc: # Project sharing parameters
+  eval_episodes: 10
+  episode_max_steps: 1000
+  n_steps: 1000000
+  eval_steps: 2000
+offline:
+  n_steps: 2000000
+  vae_mask: true
+  min_weight_ood: 0.2
+  weight_decay: false
+  decay_factor: 1.01
+  base_weight: 2.0
+  decay_steps: 50000
+  ucb_ratio: 0.01
+  random_num_samples: 10
+  vae_loss_clip_min: 0.0
+  vae_loss_clip_max: 3.0
+vae:
+  beta: 0.5
+  vae_model_path: /model/vae/maze2d/vae_model_maze2d_umaze_b0.5_100000.pt
+  latent_dim: None
+  iwae: false
+  num_samples: 1
+actor_critic:
+  backup_entropy: false
+  critic_num: 10
+  q_mode: min #min ave rem
+  hidden_width: 256
+  actor_lr: 0.0001
+  critic_lr: 0.0003
+  tau: 0.005
+  gamma: 0.99
+  alpha: 0.2
+  alpha_lr: 0.0003
+  automatic_entropy_tuning: true
+  policy_freq: 1
+  buffer_size: 2000000
+  priority_buffer: false
+  batch_size: 256
+
